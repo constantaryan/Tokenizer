@@ -77,7 +77,7 @@ class BasicTokenizer(Tokenizer):
     def _load_pretrained_data(self):
         """Load pre-trained merges and vocab from JSON file"""
         try:
-            with open('attached_assets/basic_tokenizer_1750928969677.json', 'r') as f:
+            with open('basic_tokenizer.json', 'r') as f:
                 data = json.load(f)
             
             # Convert string keys back to tuples for merges
@@ -176,7 +176,7 @@ class RegexTokenizer(Tokenizer):
     def _load_pretrained_data(self):
         """Load pre-trained merges and vocab from JSON file"""
         try:
-            with open('attached_assets/regex_tokenizer_1750928969678.json', 'r') as f:
+            with open('regex_tokenizer.json', 'r') as f:
                 data = json.load(f)
             
             # Convert string keys back to tuples for merges
