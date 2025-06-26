@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.tokenizer-selector select {
+    padding: 8px 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.tokenizer-selector select:focus {
+    outline: none;
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    min-height: 600px;
+}
+
+.left-panel {
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 0;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.text-input-container {
+    padding: 0;
+    height: 100%;
+}
+
+.text-input-container textarea {
+    width: 100%;
+    height: 400px;
+    border: none;
+    padding: 16px;
+    resize: none;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #ffffff;
+    outline: none;
+    border-radius: 6px;
+}
+
+.text-input-container textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.token-count {
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+.token-count-label {
+    font-size: 14px;
+    color: #656d76;
+    margin-bottom: 4px;
+}
+
+.token-count-number {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.colored-text {
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+    min-height: 200px;
+    overflow-y: auto;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.token-numbers {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 16px;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.whitespace-toggle {
+    margin-top: 10px;
+}
+
+.whitespace-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #656d76;
+    cursor: pointer;
+}
+
+.whitespace-toggle input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .message-label {
+        width: 80px;
+        font-size: 12px;
+    }
+}
+
+/* Auto-submit on textarea change */
+.message-input textarea {
+    transition: border-color 0.2s ease;
+}
+
+.message-input textarea:focus {
+    border-left: 3px solid #0969da;
+}
